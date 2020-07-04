@@ -1,34 +1,25 @@
 import React from "react";
-import {FlatList, StyleSheet} from "react-native";
+import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
-import useFetch from "../hooks/useFetch";
-import ComicsItem from "./ComicsItem";
-
-const ComicsList = ({navigation=null}) => {
-    const { response, error, doFetch } = useFetch();
-
+const ComicsItem = ({ comics, navigation }) => {
     return (
-        <FlatList
-            data={response}
-            contentContainerStyle={styles.container}
-            renderItem={ ({item}) => <ComicsItem comics={item} navigation={navigation}></ComicsItem> } >
-        </FlatList>
+        <TouchableOpacity
+            key={comics.num}
+            style={styles.itemContainer}
+            onPress={() => navigation.navigate('Details', {item: comics})}>
+            <View style={styles.textContainer}>
+                <Text style={styles.title}>{comics && comics.title}</Text>
+            </View>
+            <View style={styles.imgContainer}>
+                <Image source={{ uri: comics.img }} style={styles.img} />
+            </View>
+        </TouchableOpacity>
     )
 }
 
-export default ComicsList;
+export default ComicsItem;
 
 const styles = StyleSheet.create({
-    container: {
-        marginTop: 10,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    header: {
-        width: "100%",
-        padding: 0,
-        margin: 0
-    },
     itemContainer: {
         marginTop: 15,
         height: 160,

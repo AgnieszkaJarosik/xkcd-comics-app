@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 const ListHeader = () => {
     return (
@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     title: {
         width: "100%",
         marginTop: "10%",
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         alignItems: "center",
         justifyContent: "center",
-        height: 70,
+        height: 60,
     },
     titleText: {
         color: "white",
