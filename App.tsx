@@ -1,25 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useEffect} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
 import ComicsList from './components/ComicsList';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-        <ComicsList />
-      <StatusBar style="auto" />
-    </View>
+      <>
+        <StatusBar backgroundColor="white" />
+        <View style={styles.container}>
+            <ComicsList />
+        </View>
+      </>
   );
 }
 
 export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+    container: {
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        margin: 0,
+        padding: 0,
+        width: "100%"
+    }
 });
