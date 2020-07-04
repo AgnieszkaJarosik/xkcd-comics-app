@@ -9,6 +9,11 @@ const ComicsItem = ({ comics, navigation }) => {
             onPress={() => navigation.navigate('Details', {item: comics})}>
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{comics && comics.title}</Text>
+                <View style={styles.date}>
+                    <Text>Date: {comics && comics.year}/</Text>
+                    <Text>{comics && comics.month}/</Text>
+                    <Text>{comics && comics.day}</Text>
+                </View>
             </View>
             <View style={styles.imgContainer}>
                 <Image source={{ uri: comics.img }} style={styles.img} />
@@ -29,7 +34,7 @@ const styles = StyleSheet.create({
         borderColor: 'rgba(0, 0, 0, 0.4)',
         borderWidth: 1.5,
         borderRadius: 5,
-        backgroundColor: 'rgba(242, 242, 242, 0.5)'
+        backgroundColor: 'rgba(255, 255, 255, 0.7)'
     },
     textContainer: {
         alignSelf: "flex-start",
@@ -41,6 +46,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: "500"
+    },
+    date: {
+        paddingTop: 20,
+       display: "flex",
+       flexDirection: "row"
     },
     imgContainer: {
         alignSelf: "flex-end",

@@ -1,26 +1,19 @@
 import React from "react";
-import {Image, StyleSheet, Text, View} from "react-native";
+import { Image, StyleSheet } from "react-native";
 
 const ComicsItem = ({ route, navigation }) => {
+    console.log(route, navigation)
     const item = route && route.params.item;
-    console.log(item)
-    return (
-        <View style={styles.imgContainer}>
-            <Image source={{ uri: item.img }} style={styles.img} />
-        </View>
-    )
+
+    return <Image source={{ uri: item.img }} style={styles.img} resizeMode={"contain"}/>
 }
 
 export default ComicsItem;
 
 const styles = StyleSheet.create({
-    imgContainer: {
-        marginTop: 20,
-    },
     img: {
         width: "100%",
-        height: 500,
-        borderColor: 'black',
-        borderWidth: 1,
+        height: "100%",
+        backgroundColor: "white"
     }
 });
