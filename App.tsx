@@ -5,7 +5,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ComicsList from './components/ComicsList';
 import ComicsDetails from "./components/ComicsDetails";
 
-const Stack = createStackNavigator();
+type RootStackParamList = {
+    Home: undefined;
+    Details: { item: Object };
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
     return (
@@ -30,7 +35,6 @@ const App = () => {
                     <Stack.Screen name="Details" component={ ComicsDetails } />
                 </Stack.Navigator>
             </NavigationContainer>
-
         </>
     );
 }

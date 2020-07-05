@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {FlatList, StyleSheet, Text} from "react-native";
 
 import useFetch from "../hooks/useFetch";
@@ -6,12 +6,9 @@ import ComicsItem from "./ComicsItem";
 
 const ComicsList = ({ navigation=null }) => {
     const { response, error, loading, doFetch } = useFetch();
-    const [offset, setOffset] = useState(0);
 
-    const handleEnd = () => {
-        setOffset(offset+1);
-        console.log('end site')
-        doFetch(offset);
+    const handleEnd = async () => {
+        await doFetch();
     }
 
     if(error){

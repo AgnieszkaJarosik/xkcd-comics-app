@@ -1,7 +1,10 @@
 import React from "react";
 import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Comics} from "../comics";
 
-const ComicsItem = ({ comics, navigation }) => {
+type ComicsItemProps = { comics: Comics, navigation: any };
+
+const ComicsItem = ({ comics, navigation }: ComicsItemProps) => {
     return (
         <TouchableOpacity
             key={comics.num}

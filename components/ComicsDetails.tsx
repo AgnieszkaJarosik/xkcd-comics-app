@@ -1,14 +1,15 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 
-const ComicsItem = ({ route, navigation }) => {
-    console.log(route, navigation)
+type ComicsDetailsProps = { route: any, navigation: any };
+
+const ComicsDetails = ({ route, navigation }: ComicsDetailsProps) => {
     const item = route && route.params.item;
 
     return <Image source={{ uri: item.img }} style={styles.img} resizeMode={"contain"}/>
 }
 
-export default ComicsItem;
+export default ComicsDetails;
 
 const styles = StyleSheet.create({
     img: {
